@@ -1,64 +1,20 @@
 <nav class="side-nav">
   <ul>
     {% for item in menu.children if item.displayed %}
-      <li {% if item.hasChildren %}class="arrow"{% endif %}>
-        <a href="{{ item.uri }}">{{ item.label }}</a>
-      </li>
-      {% if item.hasChildren %}
       <li>
-        <ul class="sub-nav">
-          {% for child in item.children if child.displayed %}
-            <li {% if matcher.isCurrent(child) or matcher.isAncestor(child) %}class="active"{% endif %}>
-              <a href="{{ child.uri }}">{{ child.label }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <a class="{% if item.hasChildren %}arrow{% endif %}{% if matcher.isCurrent(item) or matcher.isAncestor(item) %} active{% endif %}"
+           href="{{ item.uri }}">{{ item.label }}</a>
+        {% if item.hasChildren and matcher.isCurrent(item) %}
+          <ul class="sub-nav">
+            {% for child in item.children if child.displayed %}
+              <li>
+                <a {% if matcher.isCurrent(child) or matcher.isAncestor(child) %}class="active"{% endif %}
+                   href="{{ child.uri }}">{{ child.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </li>
-      {% endif %}
     {% endfor %}
-    {#<li><a href="index.html">Главная</a></li>#}
-    {#<li><a href="about.html">О компании</a></li>#}
-    {#<li><a class="arrow active" href="services.html">Услуги</a>#}
-      {#<ul class="sub-nav">#}
-        {#<li><a class="active" href="#">Бухгалтерский и налоговый учет</a></li>#}
-        {#<li><a href="#">Бюджетное управление</a></li>#}
-        {#<li><a href="#">Решения для строительной отрасли</a></li>#}
-        {#<li><a href="#">Консолидация</a></li>#}
-        {#<li><a href="#">Управленческий учет</a></li>#}
-        {#<li><a href="#">Зарплата и управление персоналом</a></li>#}
-      {#</ul>#}
-    {#</li>#}
-    {#<li><a class="arrow" href="#">Программные продукты</a></li>#}
-    {#<li><a href="#">Управление проектами</a></li>#}
-    {#<li><a href="#">Наши партнёры</a></li>#}
-    {#<li><a href="contacts.html">Контакты</a></li>#}
   </ul>
 </nav>
-
-
-{#<h2>{{ block.title }}</h2>#}
-
-{#{% macro menu_items(items, matcher) %}#}
-  {#{% for item in items %}#}
-    {#{% if item.displayed %}#}
-      {#<li>#}
-        {#{% if matcher.isCurrent(item) or matcher.isAncestor(item) %}#}
-          {#<b><a href="{{ item.uri }}">{{ item.label }}</a></b>#}
-        {#{% else %}#}
-          {#<a href="{{ item.uri }}">{{ item.label }}</a>#}
-        {#{% endif %}#}
-        {#{% if item.hasChildren %}#}
-          {#<ul>#}
-            {#{{ _self.menu_items(item.children, matcher) }}#}
-          {#</ul>#}
-        {#{% endif %}#}
-      {#</li>#}
-    {#{% endif %}#}
-  {#{% endfor %}#}
-{#{% endmacro %}#}
-
-{#<div>#}
-  {#<ul>#}
-    {#{{ _self.menu_items(menu.children, matcher) }}#}
-  {#</ul>#}
-{#</div>#}
