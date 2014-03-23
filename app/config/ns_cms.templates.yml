@@ -11,6 +11,9 @@ templates:
             -
                 name: content
                 title: "Область контента"
+            -
+                name: feedback
+                title: "Форма заявки"
     -
         path: "NSCmsBundle:Pages:page.html.twig"
         title: "Шаблон страницы сайта"

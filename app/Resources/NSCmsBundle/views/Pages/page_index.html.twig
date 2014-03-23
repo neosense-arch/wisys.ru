@@ -44,11 +44,9 @@
         Доработки могут быть любой сложности. Наши методологи профессионально сформулируют
         техническое задание, а наши программисты не менее профессионально его реализуют.</p>
       <p><a href="#">О компании подробнее</a></p>
-      <a href="#" class="presentation"><img src="images/pdf-big.png" alt=""><br>Презентация компании</a>
+      <a href="#" class="presentation"><img src="{{ asset('bundles/wsfront/images/pdf-big.png') }}"><br>Презентация компании</a>
       <div class="leave-request">
-        <img src="images/request.png" alt="" class="request-image">
-        <a href="#" class="button">Оставить заявку</a><br>
-        <a href="#" class="we-answer">Ответим на любые вопросы</a>
+        {{ ns_cms_area(blocks, 'feedback') }}
       </div>
     </section>
   </article>

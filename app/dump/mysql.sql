@@ -192,7 +192,7 @@ CREATE TABLE `ns_catalog_type_elements` (
   PRIMARY KEY (`id`),
   KEY `IDX_623C0EB9C54C8C93` (`type_id`),
   CONSTRAINT `FK_623C0EB9C54C8C93` FOREIGN KEY (`type_id`) REFERENCES `ns_catalog_types` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,6 +201,7 @@ CREATE TABLE `ns_catalog_type_elements` (
 
 LOCK TABLES `ns_catalog_type_elements` WRITE;
 /*!40000 ALTER TABLE `ns_catalog_type_elements` DISABLE KEYS */;
+INSERT INTO `ns_catalog_type_elements` VALUES (1,1,'Электронная почта','email','email'),(2,1,'ФИО','name','text');
 /*!40000 ALTER TABLE `ns_catalog_type_elements` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,7 +217,7 @@ CREATE TABLE `ns_catalog_types` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,6 +226,7 @@ CREATE TABLE `ns_catalog_types` (
 
 LOCK TABLES `ns_catalog_types` WRITE;
 /*!40000 ALTER TABLE `ns_catalog_types` DISABLE KEYS */;
+INSERT INTO `ns_catalog_types` VALUES (1,'Форма обратной связи','feedback');
 /*!40000 ALTER TABLE `ns_catalog_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,7 +251,7 @@ CREATE TABLE `ns_cms_blocks` (
   PRIMARY KEY (`id`),
   KEY `IDX_5C6208FCC4663E4` (`page_id`),
   CONSTRAINT `FK_5C6208FCC4663E4` FOREIGN KEY (`page_id`) REFERENCES `ns_cms_pages` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +260,7 @@ CREATE TABLE `ns_cms_blocks` (
 
 LOCK TABLES `ns_cms_blocks` WRITE;
 /*!40000 ALTER TABLE `ns_cms_blocks` DISABLE KEYS */;
-INSERT INTO `ns_cms_blocks` VALUES (1,NULL,'Блок меню',NULL,NULL,'NSCmsBundle:Blocks:menuBlock','menu',0,0,0),(2,NULL,'Блок меню','NSCmsBundle:Blocks:sidebarMenuBlock.html.twig',NULL,'NSCmsBundle:Blocks:menuBlock','sidebar',0,0,0),(3,3,'Текстовый блок',NULL,'O:53:\"NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\":1:{s:62:\"\0NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\0content\";s:3490:\"<h1>О компании</h1>\r\n                <p>Наши специалисты работают в сфере разработки систем автоматизации учета не менее семи лет, сертифицированы по программным продуктам фирмы 1С и имеют большой опыт проектной работы на крупнейших предприятиях нефтяной, автомобильной промышленности, оптовой и розничной торговли, предприятиях бюджетной сферы и некоммерческих организациях. Мы хорошо знаем свое дело и предметную область.</p>\r\n                На платформе 1С мы разрабатываем и внедряем:<br>\r\n                <ul>\r\n                    <li>Системы бухгалтерского и налогового учета;</li>\r\n                    <li>Системы бюджетного управления;</li>\r\n                    <li>Системы учета и формирования отчетности по МСФО;</li>\r\n                    <li>Системы консолидации бухгалтерского учета, как по Российским стандартам, так и по МСФО;</li>\r\n                    <li>Системы управленческого (производственного) учета;</li>\r\n                    <li>Системы заработной платы и управления персоналом.</li>\r\n                </ul>\r\n                <p>Решаем вопросы, связанные с интеграцией информационных систем на базе 1С Предприятие 7.7, 8.1, 8.2 с любыми информационными системами и базами данных (в том числе SAP R/3, Axapta);</p>\r\n                Кроме этого:<br>\r\n                <ul>\r\n                    <li>Проводим обследования деятельности, бизнес-процессов, аудит используемых информационных систем;</li>\r\n                    <li>Формулируем техническую постановку задачи;</li>\r\n                    <li>Обучаем пользователей системы, разрабатываем документацию;</li>\r\n                    <li>Осуществляем поддержку внедренных информационных систем.</li>\r\n                </ul>\r\n                <p>У нас есть много собственных разработок и типовых решений по всем областям учета, что позволяет получать результат в кратчайшие сроки и с наименьшими затратами.</p>\r\n                <p>Если Вас не устраивает уже имеющийся функционал системы, то мы можем доработать ее. Доработки могут быть любой сложности. Наши методологи профессионально сформулируют техническое задание, а наши программисты не менее профессионально его реализуют.</p>\";}','NSCmsBundle:Blocks:contentBlock','content',0,0,0),(4,9,'Текстовый блок',NULL,'O:53:\"NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\":1:{s:62:\"\0NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\0content\";s:3102:\"<h1>Бухгалтерский и налоговый учет</h1>\r\n                <p>Наша компания предлагает автоматизировать работу вашей бухгалтерской службы. В качестве базовой программы для автоматизации бухгалтерского и налогового учета мы используем конфигурацию 1С:Предприятие 8 «Бухгалтерия предприятия». Модель, заложенная в этой системе, позволяет практически без изменений использовать ее на большинстве предприятий.</p>\r\n                <p>Однако если бизнес-процессы в вашей бухгалтерии отличаются от стандартных и вы уже используете измененную конфигурацию 1С:Предприятие 7.7 или какую-либо другую систему, то мы можем тщательно изучить изменения, которые вы используете и предложим либо перенести их в конфигурацию Бухгалтерия предприятия 8, либо изменить ваши бизнес-процессы под стандартные для того, чтобы вы не платили за внедрение лишние деньги.</p>\r\n                <p>Для крупных предприятий с филиальной структурой мы можем предложить использовать конфигурацию «Бухгалтерия предприятия КОРП», которая позволяет вести учет всех подразделений в одной информационной базе и формировать консолидированную отчетность.</p>\r\n                <p>Если ваше предприятие имеет удаленные филиалы, то мы можем настроить их работу через терминальный доступ, либо через механизм распределенных информационных баз.</p>\r\n                <p>Мы работаем комплексно. Выполняем обследование и анализ существующих бизнес – процессов «как есть», предлагаем варианты их оптимизации, формируем модель бизнес – процессов «как должно быть», разрабатываем и внедряем функции бизнес – процессов, разрабатываем техническую документацию на доработки и проводим индивидуальное обучение пользователей.</p>\r\n                <p><a href=\"#\" class=\"pdf\">Бухгалтерский и налоговый учет</a></p>\";}','NSCmsBundle:Blocks:contentBlock','content',0,0,0),(5,8,'Текстовый блок',NULL,'O:53:\"NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\":1:{s:62:\"\0NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\0content\";s:772:\"<h1>Контакты</h1>\r\n                Вы можете связаться с нами<br>\r\n                <ul>\r\n                    <li>По телефону: <span class=\"bold\">+7 (495) 505-51-47</span></li>\r\n                    <li>По электронной почте: <span class=\"bold\">sales@wisys.ru</span></li>\r\n                </ul>\r\n                <p>Вы можете отправить заявку и наш сотрудник приедет к вам для демонстрации программного продукта или для проведения экспресс-обследования.</p><br>\r\n                <p>Наш адрес: <span class=\"bold\">Москва, улица Часовая, дом 24 корпус 2</span></p><br>\";}','NSCmsBundle:Blocks:contentBlock','content',0,0,0);
+INSERT INTO `ns_cms_blocks` VALUES (1,NULL,'Блок меню',NULL,NULL,'NSCmsBundle:Blocks:menuBlock','menu',0,0,0),(2,NULL,'Блок меню','NSCmsBundle:Blocks:sidebarMenuBlock.html.twig',NULL,'NSCmsBundle:Blocks:menuBlock','sidebar',0,0,0),(3,3,'Текстовый блок',NULL,'O:53:\"NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\":1:{s:62:\"\0NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\0content\";s:3490:\"<h1>О компании</h1>\r\n                <p>Наши специалисты работают в сфере разработки систем автоматизации учета не менее семи лет, сертифицированы по программным продуктам фирмы 1С и имеют большой опыт проектной работы на крупнейших предприятиях нефтяной, автомобильной промышленности, оптовой и розничной торговли, предприятиях бюджетной сферы и некоммерческих организациях. Мы хорошо знаем свое дело и предметную область.</p>\r\n                На платформе 1С мы разрабатываем и внедряем:<br>\r\n                <ul>\r\n                    <li>Системы бухгалтерского и налогового учета;</li>\r\n                    <li>Системы бюджетного управления;</li>\r\n                    <li>Системы учета и формирования отчетности по МСФО;</li>\r\n                    <li>Системы консолидации бухгалтерского учета, как по Российским стандартам, так и по МСФО;</li>\r\n                    <li>Системы управленческого (производственного) учета;</li>\r\n                    <li>Системы заработной платы и управления персоналом.</li>\r\n                </ul>\r\n                <p>Решаем вопросы, связанные с интеграцией информационных систем на базе 1С Предприятие 7.7, 8.1, 8.2 с любыми информационными системами и базами данных (в том числе SAP R/3, Axapta);</p>\r\n                Кроме этого:<br>\r\n                <ul>\r\n                    <li>Проводим обследования деятельности, бизнес-процессов, аудит используемых информационных систем;</li>\r\n                    <li>Формулируем техническую постановку задачи;</li>\r\n                    <li>Обучаем пользователей системы, разрабатываем документацию;</li>\r\n                    <li>Осуществляем поддержку внедренных информационных систем.</li>\r\n                </ul>\r\n                <p>У нас есть много собственных разработок и типовых решений по всем областям учета, что позволяет получать результат в кратчайшие сроки и с наименьшими затратами.</p>\r\n                <p>Если Вас не устраивает уже имеющийся функционал системы, то мы можем доработать ее. Доработки могут быть любой сложности. Наши методологи профессионально сформулируют техническое задание, а наши программисты не менее профессионально его реализуют.</p>\";}','NSCmsBundle:Blocks:contentBlock','content',0,0,0),(4,9,'Текстовый блок',NULL,'O:53:\"NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\":1:{s:62:\"\0NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\0content\";s:3102:\"<h1>Бухгалтерский и налоговый учет</h1>\r\n                <p>Наша компания предлагает автоматизировать работу вашей бухгалтерской службы. В качестве базовой программы для автоматизации бухгалтерского и налогового учета мы используем конфигурацию 1С:Предприятие 8 «Бухгалтерия предприятия». Модель, заложенная в этой системе, позволяет практически без изменений использовать ее на большинстве предприятий.</p>\r\n                <p>Однако если бизнес-процессы в вашей бухгалтерии отличаются от стандартных и вы уже используете измененную конфигурацию 1С:Предприятие 7.7 или какую-либо другую систему, то мы можем тщательно изучить изменения, которые вы используете и предложим либо перенести их в конфигурацию Бухгалтерия предприятия 8, либо изменить ваши бизнес-процессы под стандартные для того, чтобы вы не платили за внедрение лишние деньги.</p>\r\n                <p>Для крупных предприятий с филиальной структурой мы можем предложить использовать конфигурацию «Бухгалтерия предприятия КОРП», которая позволяет вести учет всех подразделений в одной информационной базе и формировать консолидированную отчетность.</p>\r\n                <p>Если ваше предприятие имеет удаленные филиалы, то мы можем настроить их работу через терминальный доступ, либо через механизм распределенных информационных баз.</p>\r\n                <p>Мы работаем комплексно. Выполняем обследование и анализ существующих бизнес – процессов «как есть», предлагаем варианты их оптимизации, формируем модель бизнес – процессов «как должно быть», разрабатываем и внедряем функции бизнес – процессов, разрабатываем техническую документацию на доработки и проводим индивидуальное обучение пользователей.</p>\r\n                <p><a href=\"#\" class=\"pdf\">Бухгалтерский и налоговый учет</a></p>\";}','NSCmsBundle:Blocks:contentBlock','content',0,0,0),(5,8,'Текстовый блок',NULL,'O:53:\"NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\":1:{s:62:\"\0NS\\CmsBundle\\Block\\Settings\\ContentBlockSettingsModel\0content\";s:772:\"<h1>Контакты</h1>\r\n                Вы можете связаться с нами<br>\r\n                <ul>\r\n                    <li>По телефону: <span class=\"bold\">+7 (495) 505-51-47</span></li>\r\n                    <li>По электронной почте: <span class=\"bold\">sales@wisys.ru</span></li>\r\n                </ul>\r\n                <p>Вы можете отправить заявку и наш сотрудник приедет к вам для демонстрации программного продукта или для проведения экспресс-обследования.</p><br>\r\n                <p>Наш адрес: <span class=\"bold\">Москва, улица Часовая, дом 24 корпус 2</span></p><br>\";}','NSCmsBundle:Blocks:contentBlock','content',0,0,0),(6,2,'Форма обратной связи',NULL,'O:59:\"NS\\FeedbackBundle\\Block\\Settings\\FeedbackBlockSettingsModel\":2:{s:67:\"\0NS\\FeedbackBundle\\Block\\Settings\\FeedbackBlockSettingsModel\0formId\";i:1;s:71:\"\0NS\\FeedbackBundle\\Block\\Settings\\FeedbackBlockSettingsModel\0ignorePost\";b:0;}','NSFeedbackBundle:Blocks:feedbackBlock','feedback',0,0,0);
 /*!40000 ALTER TABLE `ns_cms_blocks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,7 +367,7 @@ CREATE TABLE `ns_feedback_forms` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_6FB48534C54C8C93` (`type_id`),
   CONSTRAINT `FK_6FB48534C54C8C93` FOREIGN KEY (`type_id`) REFERENCES `ns_catalog_types` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,6 +376,7 @@ CREATE TABLE `ns_feedback_forms` (
 
 LOCK TABLES `ns_feedback_forms` WRITE;
 /*!40000 ALTER TABLE `ns_feedback_forms` DISABLE KEYS */;
+INSERT INTO `ns_feedback_forms` VALUES (1,1,'NSFeedbackBundle:Email:default.html.twig','Оставить заявку','a:1:{i:0;s:11:\"stmol@bk.ru\";}');
 /*!40000 ALTER TABLE `ns_feedback_forms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -641,4 +644,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-23 21:04:15
+-- Dump completed on 2014-03-24  0:05:23

@@ -1,0 +1,40 @@
+{#
+	Common vars
+	* block    [NS\CmsBundle\Entity\Block]
+	* settings [NS\FeedbackBundle\Block\Settings\FeedbackBlockSettingsModel]
+	    * formId     [int]
+	    * ignorePost [boolean]
+
+	Root-level vars
+	* form     [Symfony\Component\Form\FormView]
+	* success  [boolean]
+	* uid      [string]
+	* ajaxUrl  [string]
+#}
+
+<img src="{{ asset('bundles/wsfront/images/request.png') }}" class="request-image">
+{% if success %}
+  <p>Ваше сообщение успешно отправлено!</p>
+{% else %}
+  <a href="#" class="button">Оставить заявку</a><br>
+  <a href="#" class="we-answer">Ответим на любые вопросы</a>
+
+  {#<form method="post" class="{{ uid }}">#}
+    {#{{ form_widget(form) }}#}
+    {#<input type="submit" value="Отправить">#}
+  {#</form>#}
+
+  {# Asynchronous usage example #}
+  {% if settings.ignorePost %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+      (function ($) {
+        var form = $('.{{ uid }}');
+        form.submit(function () {
+          $.post('{{ ajaxUrl }}', $('.{{ uid }}').serialize());
+          return false;
+        });
+      })(jQuery);
+    </script>
+  {% endif %}
+{% endif %}
