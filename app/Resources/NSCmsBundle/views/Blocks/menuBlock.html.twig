@@ -1,0 +1,8 @@
+<div class="grid">
+  <ul>
+    {% for item in menu.children %}
+      <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
+    {% endfor %}
+    {#<li><a href="index.html" class="active">Главная</a></li>#}
+  </ul>
+</div>

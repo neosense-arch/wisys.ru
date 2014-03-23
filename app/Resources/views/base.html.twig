@@ -1,13 +1,64 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]>
+<html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title 'Мастерская информационных систем – WISYS.RU' %}</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/wsfront/css/main.css') }}" media="screen">
+  {% endblock stylesheets %}
+
+  {% block javascripts %}
+    <script src="{{ asset('bundles/wsfront/js/vendor/modernizr.js') }}"></script>
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="{{ asset('bundles/wsfront/js/vendor/selectivizr-min.js') }}"></script>
+    <![endif]-->
+  {% endblock javascripts %}
+</head>
+<body>
+{% block body %}
+<div class="wrap clearfix">
+  <header>
+    {% block header %}
+    <div class="grid">
+      <div class="contact">
+        <p class="phone"><span class="code">+7 (495)</span> 505 51 47</p>
+
+        <p><a href="mailto:sales@wisys.ru">sales@wisys.ru</a></p>
+      </div>
+      <a href="index.html" class="logo"><img src="{{ asset('bundles/wsfront/images/logo.png') }}" alt=""></a>
+    </div>
+    {% endblock header %}
+  </header>
+  {% block content '' %}
+</div>
+<footer>
+  {% block footer %}
+  <div class="grid">
+    <div class="footer-wrap">
+      <span class="footer-logo"><img src="{{ asset('bundles/wsfront/images/footer-logo.png') }}" alt=""></span>
+      <span class="copyright">© Все права защищены 2009 – 2014<br>ООО «Мастерская информационных систем»</span>
+
+      <div class="contact">
+        <p class="phone"><span class="code">+7 (495)</span> 505 51 47</p>
+
+        <p><a href="mailto:sales@wisys.ru">sales@wisys.ru</a></p>
+      </div>
+
+    </div>
+  </div>
+  {% endblock footer %}
+</footer>
+{% endblock body %}
+</body>
 </html>

@@ -1,107 +1,12 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+{% extends "::base.html.twig" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>Главная</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <link rel="stylesheet" href="{{ asset('bundles/wsfront/css/main.css') }}" media="screen">
-  <script src="{{ asset('bundles/wsfront/js/vendor/modernizr.js') }}"></script>
-  <!--[if (lt IE 9) & (!IEMobile)]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <script src="{{ asset('bundles/wsfront/js/vendor/selectivizr-min.js') }}"></script>
-  <![endif]-->
-</head>
-<body>
-<div class="wrap clearfix">
-  <header>
-    <div class="grid">
-      <div class="contact">
-        <p class="phone"><span class="code">+7 (495)</span> 505 51 47</p>
-        <p><a href="mailto:sales@wisys.ru">sales@wisys.ru</a></p>
-      </div>
-      <a href="index.html" class="logo"><img src="{{ asset('bundles/wsfront/images/logo.png') }}" alt=""></a>
+{% block content %}
+  <div class="content grid">
+    <div class="sidebar">
+      {{ ns_cms_area(blocks, 'sidebar') }}
     </div>
-  </header>
-  <nav class="main-nav">
-    <div class="grid">
-      <ul>
-        <li><a href="index.html" class="active">Главная</a></li>
-        <li><a href="about.html">О компании</a></li>
-        <li><a href="services.html">Услуги</a></li>
-        <li><a href="#">Программные продукты</a></li>
-        <li><a href="#">Управление проектами</a></li>
-        <li><a href="#">Наши партнёры</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-    </div>
-  </nav>
-  <article class="content grid index">
-    <section class="right">
-      <div class="what-we-can">
-        <p class="h1">Что мы умеем?</p>
-        <ul>
-          <li><a href="#">Системы бухгалтерского и налогового учета</a></li>
-          <li><a href="#">Системы бюджетного управления</a></li>
-          <li><a href="#">Решения для строительной отрасли</a></li>
-          <li><a href="#">Системы консолидации бухгалтерского учета, как по Российским стандартам, так и по МСФО</a></li>
-          <li><a href="#">Системы управленческого (производственного) учета</a></li>
-          <li><a href="#">Системы заработной платы и управления персоналом</a></li>
-        </ul>
-      </div>
-      <p style="font-size: 11px">Решаем вопросы, связанные с интеграцией информационных систем на базе 1С Предприятие 7.7, 8.1, 8.2
-        с любыми информационными системами и базами данных (в том числе SAP R/3, Axapta);</p>
-      <p><b><i>Кроме этого:</i></b><br>
-        <span style="color: #555; font-size: 11px">— Проводим обследования деятельности, бизнес-процессов, аудит используемых информационных систем;</span><br>
-        <span style="color: #555; font-size: 11px">— Формулируем техническую постановку задачи;</span><br>
-        <span style="color: #555; font-size: 11px">— Обучаем пользователей системы, разрабатываем документацию;</span><br>
-        <span style="color: #555; font-size: 11px">— Осуществляем поддержку внедренных информационных систем.</span><br>
-      </p>
-      <form method="get" action="#" id="search-form">
-        <label for="query">Поиск по сайту:</label>
-        <input type="text" name="query" id="query" class="required">
-        <input type="submit" title="Искать" value="" id="search-submit">
-      </form>
-    </section>
-    <section class="left">
-      <h1>Кто мы</h1>
-      <p>Наши специалисты работают в сфере разработки систем автоматизации учета не менее семи лет,
-        сертифицированы по программным продуктам фирмы 1С и имеют большой опыт проектной работы
-        на крупнейших предприятиях нефтяной, автомобильной промышленности, оптовой и розничной
-        торговли, предприятиях бюджетной сферы и некоммерческих организациях.
-        Мы хорошо знаем свое дело и предметную область.</p>
-      <p>У нас есть много собственных разработок и типовых решений по всем областям учета,
-        что позволяет получать результат в кратчайшие сроки и с наименьшими затратами.</p>
-      <p>Если Вас не устраивает уже имеющийся функционал системы, то мы можем доработать ее.
-        Доработки могут быть любой сложности. Наши методологи профессионально сформулируют
-        техническое задание, а наши программисты не менее профессионально его реализуют.</p>
-      <p><a href="#">О компании подробнее</a></p>
-      <a href="#" class="presentation"><img src="{{ asset('bundles/wsfront/images/pdf-big.png') }}" alt=""><br>Презентация компании</a>
-      <div class="leave-request">
-        <img src="{{ asset('bundles/wsfront/images/request.png') }}" alt="" class="request-image">
-        <a href="#" class="button">Оставить заявку</a><br>
-        <a href="#" class="we-answer">Ответим на любые вопросы</a>
-      </div>
-    </section>
-
-  </article>
-</div>
-<footer>
-  <div class="grid">
-    <div class="footer-wrap">
-      <span class="footer-logo"><img src="{{ asset('bundles/wsfront/images/footer-logo.png') }}" alt=""></span>
-      <span class="copyright">© Все права защищены 2009 – 2014<br>ООО «Мастерская информационных систем»</span>
-      <div class="contact">
-        <p class="phone"><span class="code">+7 (495)</span> 505 51 47</p>
-        <p><a href="mailto:sales@wisys.ru">sales@wisys.ru</a></p>
-      </div>
-
-    </div>
+    <article class="article">
+      {{ ns_cms_area(blocks, 'content') }}
+    </article>
   </div>
-</footer>
-</body>
-</html>
+{% endblock content %}
