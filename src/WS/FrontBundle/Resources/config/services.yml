@@ -1,0 +1,7 @@
+parameters:
+#    ws_front.example.class: WS\FrontBundle\Example
+
+services:
+#    ws_front.example:
+#        class: %ws_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
