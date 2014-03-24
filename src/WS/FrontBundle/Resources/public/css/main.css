@@ -736,3 +736,21 @@ footer .contact .code {
     border: 0;
     background: url(/bundles/wsfront/images/sprite.png) left bottom no-repeat;
 }
+
+.modal {
+    width: 400px;
+    background: #FFF;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.modal fieldset {
+    border: none;
+}
+
+.modal form input {
+    width: 220px;
+    min-height: 16px;
+    padding: 5px;
+    border: 1px solid #CCC;
+}

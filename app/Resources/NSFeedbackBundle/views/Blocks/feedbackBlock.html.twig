@@ -16,7 +16,7 @@
 {% if success %}
   <p>Ваше сообщение успешно отправлено!</p>
 {% else %}
-  <a href="#" class="button">Оставить заявку</a><br>
+  <a href="#" id="make-order" class="button">Оставить заявку</a><br>
   <a href="#" class="we-answer">Ответим на любые вопросы</a>
 
   {#<form method="post" class="{{ uid }}">#}
@@ -24,17 +24,38 @@
     {#<input type="submit" value="Отправить">#}
   {#</form>#}
 
+  <div id="feedback-window" class="modal">
+    <div class="header">
+      <h2>Задать вопрос</h2>
+    </div>
+    <form method="post" class="{{ uid }}">
+      {{ form_widget(form) }}
+      <input type="submit" value="Отправить">
+    </form>
+  </div>
+
   {# Asynchronous usage example #}
-  {% if settings.ignorePost %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
       (function ($) {
         var form = $('.{{ uid }}');
         form.submit(function () {
           $.post('{{ ajaxUrl }}', $('.{{ uid }}').serialize());
+          $('#feedback-window').trigger('closeModal');
           return false;
         });
+
+        $('#feedback-window').easyModal({
+          top: 180,
+          overlayOpacity: 0.3,
+          overlayColor: "#CCC",
+          closeOnEscape: true
+        });
+
+        $('#make-order').on('click', function (e) {
+          e.preventDefault();
+          $('#feedback-window').trigger('openModal');
+        });
+
       })(jQuery);
     </script>
-  {% endif %}
 {% endif %}

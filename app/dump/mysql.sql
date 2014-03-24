@@ -192,7 +192,7 @@ CREATE TABLE `ns_catalog_type_elements` (
   PRIMARY KEY (`id`),
   KEY `IDX_623C0EB9C54C8C93` (`type_id`),
   CONSTRAINT `FK_623C0EB9C54C8C93` FOREIGN KEY (`type_id`) REFERENCES `ns_catalog_types` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `ns_catalog_type_elements` (
 
 LOCK TABLES `ns_catalog_type_elements` WRITE;
 /*!40000 ALTER TABLE `ns_catalog_type_elements` DISABLE KEYS */;
-INSERT INTO `ns_catalog_type_elements` VALUES (1,1,'Электронная почта','email','email'),(2,1,'ФИО','name','text');
+INSERT INTO `ns_catalog_type_elements` VALUES (3,1,'Электронная почта','email','email'),(4,1,'ФИО','name','text'),(5,1,'Заявка','message','textarea');
 /*!40000 ALTER TABLE `ns_catalog_type_elements` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -644,4 +644,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-24  0:05:23
+-- Dump completed on 2014-03-24 10:24:55
