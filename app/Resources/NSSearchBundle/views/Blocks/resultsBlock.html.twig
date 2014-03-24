@@ -1,16 +1,20 @@
 <h1>Результаты поиска по запросу «{{ query }}»</h1>
 
-{% for document in documents %}
-	{% if not document.url %}
-		{% if document.block.page.name %}
-			{% set url = url('ns_cms_page_name', { name: document.block.page.name }) %}
-		{% else %}
-			{% set url = url('ns_cms_page', { id: document.block.page.id }) %}
-		{% endif %}
-	{% else %}
-		{% set url = document.url %}
-	{% endif %}
+{% if documents|length > 0 %}
+  {% for document in documents %}
+    {% if not document.url %}
+      {% if document.block.page.name %}
+        {% set url = url('ns_cms_page_name', { name: document.block.page.name }) %}
+      {% else %}
+        {% set url = url('ns_cms_page', { id: document.block.page.id }) %}
+      {% endif %}
+    {% else %}
+      {% set url = document.url %}
+    {% endif %}
 
-	<p><a href="{{ url }}">{{ document.title }}</a></p>
-	<p>{{ document.description }}</p>
-{% endfor %}
+    <p><a href="{{ url }}">{{ document.title }}</a></p>
+    <p>{{ document.description }}</p>
+  {% endfor %}
+{% else %}
+  <p>Ничего не найдено</p>
+{% endif %}
