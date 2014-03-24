@@ -4,7 +4,7 @@
       <li>
         <a class="{% if item.hasChildren %}arrow{% endif %}{% if matcher.isCurrent(item) or matcher.isAncestor(item) %} active{% endif %}"
            href="{{ item.uri }}">{{ item.label }}</a>
-        {% if item.hasChildren and matcher.isCurrent(item) %}
+        {% if item.hasChildren and matcher.isCurrent(item) or matcher.isAncestor(item) %}
           <ul class="sub-nav">
             {% for child in item.children if child.displayed %}
               <li>

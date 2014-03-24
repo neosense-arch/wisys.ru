@@ -14,6 +14,12 @@ templates:
             -
                 name: feedback
                 title: "Форма заявки"
+            -
+                name: right
+                title: "Правая область"
+            -
+                name: skills
+                title: "Что мы умеем?"
     -
         path: "NSCmsBundle:Pages:page.html.twig"
         title: "Шаблон страницы сайта"
