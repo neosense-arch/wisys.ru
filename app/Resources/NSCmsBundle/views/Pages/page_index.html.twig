@@ -7,28 +7,29 @@
 {% endblock javascripts %}
 
 {% block content %}
-  <nav class="main-nav">
-    {{ ns_cms_area(blocks, 'menu') }}
-  </nav>
-  <article class="content grid index">
-    <section class="right">
-      <div class="what-we-can">
-        <p class="h1">Что мы умеем?</p>
-        {{ ns_cms_area(blocks, 'skills') }}
-      </div>
-      {{ ns_cms_area(blocks, 'right') }}
-      <form method="get" action="{{ url('ns_cms_page_name', { name: 'search' } ) }}" id="search-form">
-        <label for="query">Поиск по сайту:</label>
-        <input type="text" name="query" id="query" class="required">
-        <input type="submit" title="Искать" value="" id="search-submit">
-      </form>
-    </section>
-    <section class="left">
-      {{ ns_cms_area(blocks, 'content') }}
-      <a href="#" class="presentation"><img src="{{ asset('bundles/wsfront/images/pdf-big.png') }}"><br>Презентация компании</a>
-      <div class="leave-request">
-        {{ ns_cms_area(blocks, 'feedback') }}
-      </div>
-    </section>
-  </article>
+    <div class="content grid">
+        <div class="sidebar">
+            {{ ns_cms_area(blocks, 'sidebar') }}
+            {{ ns_cms_area(blocks, 'sidebarNotFixed') }}
+        </div>
+        <article class="article">
+            <article class="content grid index">
+                <section class="right">
+                    <div class="what-we-can">
+                        <p class="h1">Что мы умеем?</p>
+                        {{ ns_cms_area(blocks, 'skills') }}
+                    </div>
+                    {{ ns_cms_area(blocks, 'right') }}
+                    <form method="get" action="{{ url('ns_cms_page_name', { name: 'search' } ) }}" id="search-form">
+                        <label for="query">Поиск по сайту:</label>
+                        <input type="text" name="query" id="query" class="required">
+                        <input type="submit" title="Искать" value="" id="search-submit">
+                    </form>
+                </section>
+                <section class="left">
+                    {{ ns_cms_area(blocks, 'content') }}
+                </section>
+            </article>
+        </article>
+    </div>
 {% endblock content %}

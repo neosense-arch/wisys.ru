@@ -53,7 +53,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    min-width: 980px;
+    min-width: 1240px;
 }
 html {
     -webkit-overflow-scrolling: touch;
@@ -626,6 +626,11 @@ footer .contact .code {
 
 /* Index page =================================================== */
 
+.grid.index {
+    min-width: 800px;
+    padding: 0;
+}
+
 .presentation {
     display: inline-block;
     vertical-align: top;
@@ -643,7 +648,7 @@ footer .contact .code {
     display: inline-block;
     vertical-align: top;
     background: #fcf8e7;
-    width: 69%;
+    width: 98%;
     height: 125px;
     text-align: center;
     padding: 5px 0;
@@ -653,7 +658,8 @@ footer .contact .code {
     margin-left: 8%;
     margin-top:20px;
 }
-.leave-request .button {
+.leave-request .button,
+.leave-request form input[type=submit] {
     display: inline-block;
     vertical-align: top;
     margin-top: 40px;
@@ -672,7 +678,8 @@ footer .contact .code {
     font-size: 13px;
     border-radius: 5px;
 }
-.leave-request .button:hover {
+.leave-request .button:hover,
+.leave-request form input[type=submit]:hover {
     color: #fff;
     background: #ffb043;
     background: -moz-linear-gradient(top, #ef8b06 0%, #ffb043 100%);
@@ -682,9 +689,21 @@ footer .contact .code {
     background: -ms-linear-gradient(top, #ef8b06 0%,#ffb043 100%);
     background: linear-gradient(to bottom, #ef8b06 0%,#ffb043 100%);
 }
+.leave-request form input[type=submit]  {
+    margin-top: 0;
+}
 .leave-request .we-answer {
     font-size: 10px;
     font-style: italic;
+}
+.leave-request form fieldset {
+    text-align: left;
+}
+.leave-request form fieldset label {
+    margin-bottom: 3px;
+}
+.leave-request form fieldset .controls {
+    margin-bottom: 10px;
 }
 
 /* What we can */

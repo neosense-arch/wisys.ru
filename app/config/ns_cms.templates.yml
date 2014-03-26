@@ -5,15 +5,15 @@ templates:
         default: false
         areas:
             -
-                name: menu
-                title: "Панель меню"
+                name: sidebar
+                title: "Боковая панель меню"
                 fixed: true
+            -
+                name: sidebarNotFixed
+                title: "Боковая панель"
             -
                 name: content
                 title: "Область контента"
-            -
-                name: feedback
-                title: "Форма заявки"
             -
                 name: right
                 title: "Правая область"
