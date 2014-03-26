@@ -1,12 +1,13 @@
 (function($){
     // Side submenu sliding
+    var ani = { height: 'toggle', opacity: 'toggle', paddingLeft: 'toggle'};
     $('.side-nav .arrow').click(function(){
-        $(this).parent().find('.sub-nav').animate({ height: 'toggle', opacity: 'toggle', paddingLeft: 'toggle'}, 200);
+        $(this).parent().find('.sub-nav').add('.side-nav .sub-nav.open').animate(ani, 200).toggleClass('open');
         return false;
     });
     $('.side-nav .sub-nav').each(function(){
         if (!$(this).parent().find('.arrow').hasClass('active')) {
-            $(this).attr('data-height', $(this).height()).css({'overflow':'hidden', 'paddingLeft':5}).animate({ height: 'toggle', opacity: 'toggle', 'marginLeft':'toggle'}, 0);
+            $(this).attr('data-height', $(this).height()).css({'overflow':'hidden', 'paddingLeft':5}).animate(ani, 0);
         }
     });
 

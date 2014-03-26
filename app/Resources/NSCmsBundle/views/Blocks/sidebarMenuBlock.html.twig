@@ -5,7 +5,7 @@
         <a class="{% if item.hasChildren %}arrow{% endif %}{% if matcher.isCurrent(item) or matcher.isAncestor(item) %} active{% endif %}"
            href="{% if item.label == 'Главная' %}{{ url('ns_cms_main') }}{% else %}{{ item.uri }}{% endif %}">{{ item.label }}</a>
         {% if item.hasChildren %}
-          <ul class="sub-nav">
+          <ul class="sub-nav{% if matcher.isCurrent(item) or matcher.isAncestor(item) %} open{% endif %}">
             {% for child in item.children if child.displayed %}
               <li>
                 <a {% if matcher.isCurrent(child) or matcher.isAncestor(child) %}class="active"{% endif %}
