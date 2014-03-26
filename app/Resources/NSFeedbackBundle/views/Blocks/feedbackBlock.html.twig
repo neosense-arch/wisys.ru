@@ -23,7 +23,7 @@
     <div class="header">
       <h2>Задать вопрос</h2>
     </div>
-    <form method="post" class="{{ uid }}">
+    <form method="post" class="{{ uid }}" id="feedback-form">
       {{ form_widget(form) }}
       <input type="submit" value="Отправить">
     </form>
@@ -32,25 +32,6 @@
   {# Asynchronous usage example #}
   <script>
     (function ($) {
-      var form = $('.{{ uid }}');
-      form.submit(function () {
-        $.post('{{ ajaxUrl }}', $('.{{ uid }}').serialize());
-        $('#feedback-window').trigger('closeModal');
-        return false;
-      });
-
-      $('#feedback-window').easyModal({
-        top: 180,
-        overlayOpacity: 0.3,
-        overlayColor: "#CCC",
-        closeOnEscape: true
-      });
-
-      $('#make-order').on('click', function (e) {
-        e.preventDefault();
-        $('#feedback-window').trigger('openModal');
-      });
-
     })(jQuery);
   </script>
 {% endif %}

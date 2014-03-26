@@ -419,8 +419,11 @@ header .contact {
     text-align: right;
     margin-top: 55px;
 }
+header .contact a {
+    font-size: 19px;
+}
 header .contact .phone {
-    font-size: 24px;
+    font-size: 20px;
 }
 header .contact .code {
     color: #ff720b;
@@ -616,11 +619,17 @@ footer .contact {
         float: right;
     }
 }
+footer .contact a {
+    font-size: 19px;
+}
 footer .contact .phone {
-    font-size: 24px;
+    font-size: 20px;
 }
 footer .contact .code {
     color: #283891;
+}
+footer .contact p {
+    margin-bottom: 5px;
 }
 
 

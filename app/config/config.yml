@@ -2,6 +2,11 @@ imports:
     - { resource: parameters.yml }
     - { resource: @NSCoreBundle/Resources/config/core-config.yml }
 
+# Assets version
+framework:
+    templating:
+        assets_version: 20140326
+
 # Avalanche Imagine
 avalanche_imagine:
     source_root:  %kernel.root_dir%/../web
