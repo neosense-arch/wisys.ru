@@ -1,5 +1,6 @@
 imports:
     - { resource: parameters.yml }
+    - { resource: ns_admin.bundles.yml }
     - { resource: @NSCoreBundle/Resources/config/core-config.yml }
 
 # Assets version
@@ -56,7 +57,3 @@ avalanche_imagine:
         catalog_item_detail_full:
             type:    thumbnail
             options: { size: [800, 800], mode: inset }
-
-# NS Admin
-ns_admin:
-    bundles: [ NSAdminBundle, NSCmsBundle, NSUserBundle, NSFeedbackBundle, NSCatalogBundle, NSSearchBundle ]
