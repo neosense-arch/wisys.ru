@@ -1,6 +1,6 @@
 /web/bundles/
 !/web/upload/documents
-!/web/upload/images
+/web/upload/images
 /web/upload/j/
 /web/media/
 /web/cgi-bin/

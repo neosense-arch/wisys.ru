@@ -85,7 +85,7 @@ footer {
 }
 .index .right {
     float: right;
-    width: 41%;
+    width: 50%;
 }
 .sidebar {
     width: 340px;
@@ -727,9 +727,7 @@ footer .contact p {
 }
 .what-we-can li {
     margin-bottom: 10px;
-}
-.what-we-can li:before {
-    content: '';
+    padding-left: 13px;
 }
 .what-we-can a {
     font-style: italic;
@@ -782,3 +780,14 @@ footer .contact p {
     padding: 5px;
     border: 1px solid #CCC;
 }
+
+.dual .what-we-can {
+    height: 215px;
+    overflow:hidden;
+}.dual .what-we-can.big {
+    height: 365px;
+}
+ .what-we-can li:before {
+    content: '» ';
+    color: #ff720b;
+ }

@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="content grid">
+        <div class="sidebar">
+            {{ ns_cms_area(blocks, 'sidebar') }}
+            {{ ns_cms_area(blocks, 'sidebarNotFixed') }}
+        </div>
+        <article class="article">
+            <article class="content grid index dual">
+                <section class="right">
+                    <div style="padding-left:10px">
+                        {{ ns_cms_area(blocks, 'content_right') }}
+                    </div>
+                    {#<form method="get" action="{{ url('ns_cms_page_name', { name: 'search' } ) }}" id="search-form">#}
+                        {#<label for="query">Поиск по сайту:</label>#}
+                        {#<input type="text" name="query" id="query" class="required">#}
+                        {#<input type="submit" title="Искать" value="" id="search-submit">#}
+                    {#</form>#}
+                </section>
+                <section class="left">
+                    <div style="padding-right:10px">
+                        {{ ns_cms_area(blocks, 'content_left') }}
+                    </div>
+                </section>
+            </article>
+        </article>
+    </div>
+{% endblock content %}

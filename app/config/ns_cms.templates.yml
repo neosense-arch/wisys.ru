@@ -32,3 +32,20 @@ templates:
             -
                 name: content
                 title: "Область контента"
+    -
+        path: "NSCmsBundle:Pages:page_dual.html.twig"
+        title: "Шаблон для двухколоночного контента"
+        areas:
+            -
+                name: sidebar
+                title: "Боковая панель меню"
+                fixed: true
+            -
+                name: sidebarNotFixed
+                title: "Боковая панель"
+            -
+                name: content_left
+                title: "Область контента (левая часть)"
+            -
+                name: content_right
+                title: "Область контента (правая часть)"
