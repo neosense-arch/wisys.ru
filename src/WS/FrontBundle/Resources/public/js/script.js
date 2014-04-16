@@ -27,4 +27,10 @@
         e.preventDefault();
         $('#feedback-window').trigger('openModal');
     });
+
+    // Main items clicks
+    $('.what-we-can.active').click(function(){
+        $('.side-nav .' + $(this).attr('data-menu')).click();
+        return false;
+    });
 })(jQuery);

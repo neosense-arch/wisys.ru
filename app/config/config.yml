@@ -6,7 +6,7 @@ imports:
 # Assets version
 framework:
     templating:
-        assets_version: 20140326
+        assets_version: 201404162
 
 # Avalanche Imagine
 avalanche_imagine:

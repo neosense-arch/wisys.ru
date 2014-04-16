@@ -92,7 +92,7 @@ footer {
     float: left;
 }
 .article {
-    margin-left: 400px;
+    margin-left: 362px;
 }
 
 
@@ -736,6 +736,12 @@ footer .contact p {
 }
 .what-we-can a:hover {
     border: none;
+}
+.what-we-can.active {
+    cursor: pointer;
+}
+.what-we-can.active:hover {
+    background: #fff0ca;
 }
 
 /* Search form  */

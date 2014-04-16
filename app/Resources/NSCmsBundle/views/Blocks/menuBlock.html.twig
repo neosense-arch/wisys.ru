@@ -1,11 +1,11 @@
 <div class="grid">
-  <ul>
-    {% for item in menu.children if item.displayed %}
-      {% if item.label == 'Главная' %}
-        <li><a href="{{ url('ns_cms_main') }}">{{ item.label }}</a></li>
-      {% else %}
-        <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+    <ul>
+        {% for item in menu.children if item.displayed %}
+            {% if item.label == 'Главная' %}
+                <li><a href="{{ url('ns_cms_main') }}">{{ item.label }}</a></li>
+            {% else %}
+                <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </div>
