@@ -13,7 +13,7 @@
 
     // Feedback form
     $('#feedback-form').submit(function () {
-        $.post('{{ ajaxUrl }}', $(this).serialize());
+        $.post($(this).attr('data-url'), $(this).serialize());
         $('#feedback-window').trigger('closeModal');
         return false;
     });

@@ -12,27 +12,21 @@
 	* ajaxUrl  [string]
 #}
 <div class="leave-request">
-<img src="{{ asset('bundles/wsfront/images/request.png') }}" class="request-image">
-{% if success %}
-  <p>Ваше сообщение успешно отправлено!</p>
-{% else %}
-  <a href="#" id="make-order" class="button">Оставить заявку</a><br>
-  <span class="we-answer">Ответим на любые вопросы</span>
+    <img src="{{ asset('bundles/wsfront/images/request.png') }}" class="request-image">
+    {% if success %}
+        <p>Ваше сообщение успешно отправлено!</p>
+    {% else %}
+        <a href="#" id="make-order" class="button">Оставить заявку</a><br>
+        <span class="we-answer">Ответим на любые вопросы</span>
 
-  <div id="feedback-window" class="modal">
-    <div class="header">
-      <h2>Задать вопрос</h2>
-    </div>
-    <form method="post" class="{{ uid }}" id="feedback-form">
-      {{ form_widget(form) }}
-      <input type="submit" value="Отправить">
-    </form>
-  </div>
-
-  {# Asynchronous usage example #}
-  <script>
-    (function ($) {
-    })(jQuery);
-  </script>
-{% endif %}
+        <div id="feedback-window" class="modal">
+            <div class="header">
+                <h2>Задать вопрос</h2>
+            </div>
+            <form method="post" class="{{ uid }}" id="feedback-form" data-url="{{ ajaxUrl }}">
+                {{ form_widget(form) }}
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    {% endif %}
 </div>
